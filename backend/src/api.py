@@ -77,7 +77,7 @@ def add_drink(jwt):
     if duplicate:
         abort(400)
     try:
-        new_drink = Drink(title=title, recipe=json.dumps(recipe))
+        new_drink = Drink(title=title, recipe=json.dumps([recipe]))
         new_drink.insert()
 
     except Exception as e:
